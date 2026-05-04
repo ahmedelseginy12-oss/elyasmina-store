@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E0WP1B2P3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8E0WP1B2P3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elyasmina - مفروشات عالية الجودة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-icons">
+            <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 الوضع الليلي</button>
+        </div>
+
+        <div class="header-logo">
+            <div class="logo-text">
+                <h1>Elyasmina</h1>
+                <p>مفروشات عالية الجودة</p>
+            </div>
+        </div>
+    </header>
+    <div class="audio-player">
+        <button onclick="prevTrack()">⏮️</button>
+        <button onclick="togglePlay()" id="playBtn">▶️</button>
+        <button onclick="nextTrack()">⏭️</button>
+        <span>📻 إذاعة القرآن الكريم - مباشر</span>
+        <audio id="audioPlayer"></audio>
+    </div>
+
+    <!-- سيكشن الهيرو -->
+    <section class="hero">
+        <p class="typing-text" id="typingText"></p>
+        <div class="hero-badge">عروض خاصة 🌟</div>
+        <h2>مفروشات عالية الجودة</h2>
+        <p>بخامات قطنية 100% و بأسعار تنافسية</p>
+        <p>نسعى دائما لنكون الأفضل ⭐⭐⭐⭐⭐</p>
+        <button class="hero-btn" onclick="scrollToProducts()">تسوق الأن</button>
+        <div class="countdown-box">
+            <p class="offer-title">⏰ عرض خاص على بديل السجاد</p>
+            <div class="offer-prices">
+                <span>2×3 | 580 ج</span>
+                <span>160×220 | 480 ج</span>
+                <span>1×2 | 220 ج</span>
+                <span>1×3 | 370 ج</span>
+            </div>
+            <div class="countdown">
+                <div class="count-item">
+                    <span id="days">00</span>
+                    <p>يوم</p>
+                </div>
+                <div class="count-item">
+                    <span id="hours">00</span>
+                    <p>ساعة</p>
+                </div>
+                <div class="count-item">
+                    <span id="minutes">00</span>
+                    <p>دقيقة</p>
+                </div>
+                <div class="count-item">
+                    <span id="seconds">00</span>
+                    <p>ثانية</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- سيكشن المنتجات -->
+    <section class="products">
+        <h2>منتجاتنا المميزة</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/foat.jpg" alt="فوط و بشاكير حمام">
+                <h3>فوط وبشاكير حمام</h3>
+                <p>فوط قطنية فاخرة وبشاكير عالية الجودة</p>
+                <p class="price">يبدأ من <span> 80 </span>جنية للفوط <span>190</span> جنية للبشاكير </p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/barans.png" alt="برانس قطنية كبير">
+                <h3>برانس قطنية كبير</h3>
+                <p>برانس قطنية ناعمة ومريحة</p>
+                <p class="price">يبدأ من<span> 650 </span>جنية</p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/barans-atfal.png" alt="برانس قطنية اطفال">
+                <h3>برانس قطنية أطفال</h3>
+                <p>برانس أطفال ناعمة وآمنة</p>
+                <p class="price">يبدأ من <span>500</span> جنيه</p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/sagad.png" alt="بديل السجاد">
+                <h3>بديل السجاد</h3>
+                <p>بجميع الأنواع والمقاسات</p>
+                <p class="price">يبدأ من <span> 230 </span>جنية</p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/malayat-kabir.png" alt="أطقم ملايات كبير">
+                <h3>أطقم ملايات كبير</h3>
+                <p>ملايات سرير كبير قطنية فاخرة</p>
+                <p class="price">يبدأ من 350 جنية <span></span></p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/malayat-atfal.png" alt="أطقم ملايات أطفال">
+                <h3>أطقم ملايات أطفال</h3>
+                <p>ملايات أطفال ناعمة وآمنة</p>
+                <p class="price">يبدأ من 420 جنية <span></span></p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/dafayat.jpg" alt="دفايات">
+                <h3>دفايات</h3>
+                <p>دفايات عالية الجودة</p>
+                <p class="price">يبدأ من <span>250</span> جنيه</p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/batateen.png" alt="بطاطين">
+                <h3>بطاطين</h3>
+                <p>بطاطين دافية وناعمة</p>
+                <p class="price">يبدأ من <span>2500</span> جنيه</p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+
+            <div class="product-card">
+                <button class="wishlist-btn">🤍</button>
+                <img src="images/lehaf.png" alt="لحاف">
+                <h3>لحاف</h3>
+                <p>لحاف مريح ودافي</p>
+                <p class="price">يبدأ من <span>400</span> جنيه</p>
+                <button class="add-btn">أطلبنا الآن 🛍️
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- سيكش الفيتشر (السمات) -->
+    <section class="features">
+
+        <div class="feature-item">
+            <div class="feature-icon">🏆</div>
+            <h3>جودة عالية</h3>
+            <p>خامات قطنية 100% مضمونة الجودة</p>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">💰</div>
+            <h3>أسعار منافسة</h3>
+            <p>أفضل الأسعار في السوق</p>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">🚚</div>
+            <h3>توصيل سريع</h3>
+            <p>توصيل لجميع أنحاء المحافظة</p>
+        </div>
+
+    </section>
+
+    <section class="contact">
+        <div class="contact-card">
+            <h2>تواصل معنا</h2>
+
+            <div class="contact-item">
+                <div class="contact-icon">🗺️</div>
+                <div>
+                    <h4>العنوان</h4>
+                    <p>الغربية - المحلة الكبرى - العباسي الجديد</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                    <h4>اتصل بنا</h4>
+                    <p>01033304242 - 01033304227</p>
+                </div>
+            </div>
+
+            <a href="https://maps.app.goo.gl/5hKJQxdujx3qfw5s6" class="location-btn" target="_blank">
+                🗺️ افتح الخريطة
+            </a>
+
+            <div class="contact-buttons">
+                ...
+            </div>
+
+        </div>
+    </section>
+
+    <div class="contact-buttons">
+        <a href="https://wa.me/201033304242" class="whatsapp-btn">واتساب</a>
+        <a href="tel:01033304242" class="call-btn">📞 اتصال مباشر</a>
+        <a href="https://www.facebook.com/share/18z5b6tWhp/" class="facebook-btn">👍 فيسبوك</a>
+    </div>
+
+    </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-circle">E</div>
+            <h3>Elyasmina</h3>
+        </div>
+        <p>مفروشات عالية الجودة بخامات قطنية 100% و بأسعار تنافسية</p>
+        <p class="stars">⭐⭐⭐⭐⭐</p>
+        <p class="copyright">© Elyasmina 2025</p>
+        <p class="developer">تم التطوير بواسطة : احمد السجينى</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <a href="https://wa.me/201033304242" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" height="35">
+    </a>
+
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">⬆️</button>
+
+
+</body>
+
+</html>
