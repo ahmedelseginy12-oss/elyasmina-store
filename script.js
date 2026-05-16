@@ -1,4 +1,11 @@
+
 document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+
 
     // زرار أطلبنا الآن
     document.querySelectorAll('.add-btn').forEach(function (btn) {
