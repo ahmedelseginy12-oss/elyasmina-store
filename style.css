@@ -1,4 +1,4 @@
-/* نبدأ بة مشروعنا فى css لمسح التنسيقات الافتراضية للمتصفح */
+
 * {
     margin: 0;
     padding: 0;
@@ -208,22 +208,18 @@ header {
 
 .feature-item {
     margin-bottom: 30px;
-    /* مسافة بين كل ميزة */
 }
 
 .feature-icon {
     font-size: 40px;
     background: #fce4ec;
-    /* خلفية وردية فاتحة */
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    /* دايرة */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto 15px;
-    /* مركز + مسافة تحت */
 }
 
 .feature-item h3 {
@@ -271,7 +267,6 @@ header {
 
 .contact-icon {
     background: #fce4ec;
-    /* دايرة وردية فاتحة */
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -312,7 +307,6 @@ header {
 
 .call-btn {
     background: #4caf50;
-    /* أخضر */
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -324,7 +318,6 @@ header {
 
 .facebook-btn {
     background: #1877f2;
-    /* أزرق فيسبوك */
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -336,7 +329,6 @@ header {
 
 footer {
     background-color: #1a1a2e;
-    /* خلفية داكنة */
     color: white;
     text-align: center;
     padding: 40px 20px;
@@ -358,7 +350,6 @@ footer {
 footer p {
     font-size: 14px;
     color: #aaa;
-    /* رمادي فاتح */
     margin: 8px 0;
 }
 
@@ -380,13 +371,11 @@ footer p {
 .copyright {
     font-size: 12px !important;
     color: #666 !important;
-    /* رمادي داكن */
     margin-top: 20px !important;
 }
 
 .wishlist-btn {
     position: absolute;
-    /* بيحط القلب فوق الصورة */
     top: 10px;
     left: 10px;
     background: white;
@@ -461,12 +450,10 @@ body.dark .logo-text p {
 
 body.dark .product-card h3 {
     color: white;
-    /* اسم المنتج أبيض في الدارك مود */
 }
 
 body.dark .product-card p {
     color: #ccc;
-    /* الوصف رمادي فاتح */
 }
 
 body.dark .product-card {
@@ -563,28 +550,21 @@ body.dark .feature-item h3 {
 
 .whatsapp-float {
     position: fixed;
-    /* ثابت في الصفحة مش بيتحرك */
     bottom: 30px;
     left: 30px;
-    /* في الكونر الشمال تحت */
     background: #25d366;
-    /* لون واتساب الأخضر */
     color: white;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    /* دايرة */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    /* ظل أخضر */
     z-index: 9999;
-    /* فوق كل حاجة */
     animation: pulse 2s infinite;
-    /* نبضة عشان يلفت النظر */
 }
 
 @keyframes pulse {
@@ -605,9 +585,7 @@ body.dark .feature-item h3 {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    /* في الكونر اليمين تحت */
     background: #e91e8c;
-    /* وردي زي لون الموقع */
     color: white;
     width: 50px;
     height: 50px;
@@ -616,7 +594,6 @@ body.dark .feature-item h3 {
     font-size: 20px;
     cursor: pointer;
     display: none;
-    /* مخفي في الأول */
     z-index: 9999;
     box-shadow: 0 4px 15px rgba(233, 30, 140, 0.4);
 }
@@ -627,7 +604,6 @@ body.dark .feature-item h3 {
     margin-bottom: 15px;
     font-weight: bold;
     min-height: 30px;
-    /* عشان الصفحة متتزعزعش وهو بيتكتب */
 }
 
 .location-btn {
