@@ -128,5 +128,29 @@ function updateCountdown() {
     document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
 }
 
+
+document.querySelectorAll('.navbar a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    var position = target.offsetTop;
+    var current = window.pageYOffset;
+    var distance = position - current;
+    var duration = 1500;
+    var start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = timestamp - start;
+      var percent = Math.min(progress / duration, 1);
+      window.scrollTo(0, current + distance * percent);
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    window.requestAnimationFrame(step);
+  });
+});
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
