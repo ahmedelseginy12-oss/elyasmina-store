@@ -6,12 +6,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* الكود هنا بيحدد لون الخلفية و بيخلى الصفحة من اليمين لليسار */
 body {
     direction: rtl;
-    background-color: #fff;
+    background-color: #fff5f7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e91e8c' fill-opacity='0.06'%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(45 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(90 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(135 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(180 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(225 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(270 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(315 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px;
 }
-
 
 header {
     display: flex;
@@ -22,6 +22,7 @@ header {
     background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
     position: relative;
+    box-shadow: 0 2px 15px rgba(233, 30, 140, 0.15);
 }
 
 .header-icons {
@@ -103,7 +104,7 @@ header {
 /* سيكشن المنتجات */
 .products {
     padding: 40px 20px;
-    background-color: #fff5f7;
+    background-color: transparent;
 }
 
 .products h2 {
@@ -115,20 +116,16 @@ header {
 
 .products-grid {
     display: grid;
-    /* بيقسم الصفحة لعمودين */
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    /* مسافة بين الكروت */
 }
 
 .product-card {
     background: white;
     border-radius: 15px;
-    /* حواف دايرية */
     padding: 15px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    /* ظل خفيف تحت الكارت */
     position: relative;
 }
 
@@ -201,12 +198,11 @@ header {
     cursor: pointer;
     font-size: 14px;
     width: 100%;
-    /* الزرار يمتد على عرض الكارت */
 }
 
 .features {
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: transparent;
     text-align: center;
 }
 
@@ -245,7 +241,7 @@ header {
 .contact {
     text-align: center;
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: transparent;
 }
 
 .contact-card {
@@ -253,7 +249,6 @@ header {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    /* ظل خفيف حوالين الكارت */
     text-align: right;
 }
 
@@ -404,6 +399,13 @@ footer p {
     z-index: 10;
 }
 
+body.dark {
+    background-color: #1a1a2e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e91e8c' fill-opacity='0.08'%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(45 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(90 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(135 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(180 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(225 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(270 40 40)'/%3E%3Cpath d='M40 0 C45 10 50 15 40 20 C30 15 35 10 40 0Z' transform='rotate(315 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    color: white;
+}
+
 .dark-mode-btn {
     background: #f0f0f0;
     border: none;
@@ -432,7 +434,7 @@ body.dark .product-card {
 }
 
 body.dark .products {
-    background-color: #0f3460;
+    background-color: transparent;
 }
 
 body.dark .features {
@@ -761,4 +763,35 @@ body.dark .feature-item h3 {
 
 .products h2 {
     color: whitesmoke;
+}
+
+.navbar {
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(233, 30, 140, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background: #e91e8c;
+    color: white;
 }
