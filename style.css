@@ -67,6 +67,7 @@ header {
     position: relative;
     text-align: center;
     color: white;
+    background: linear-gradient(135deg, #1a1a1a, #333);
     min-height: 550px;
     height: auto;
     padding: 120px 20px 40px;
@@ -878,4 +879,10 @@ body.dark .feature-item h3 {
 .hero>*:not(.hero-slides) {
     position: relative;
     z-index: 2;
+}
+
+.slider-section {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
 }
