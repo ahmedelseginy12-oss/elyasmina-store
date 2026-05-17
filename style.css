@@ -21,8 +21,10 @@ header {
     padding: 15px 20px;
     background-color: #fff;
     border-bottom: 1px solid #f0f0f0;
-    position: relative;
+    position: sticky;
     box-shadow: 0 2px 15px rgba(233, 30, 140, 0.15);
+    top: 0;
+    z-index: 1000;
 }
 
 .header-icons {
