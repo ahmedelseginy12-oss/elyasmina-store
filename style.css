@@ -948,3 +948,45 @@ body.dark .feature-item h3 {
     background: #e91e8c;
     color: white;
 }
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.fb-icon {
+    background: #1877f2;
+}
+
+.tiktok-icon {
+    background: #000000;
+}
+
+.wa-icon {
+    background: #25d366;
+}
+
+.gmail-icon {
+    background: #ea4335;
+}
+
+.social-icons img {
+    filter: invert(0);
+}
