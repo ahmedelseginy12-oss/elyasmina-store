@@ -48,8 +48,7 @@
         <audio id="audioPlayer"></audio>
     </div>
 
-    <!-- سيكشن الهيرو -->
-    <section class="hero" id="hero">
+    <section class="slider-section">
         <div class="hero-slides">
             <div class="hero-slide active"
                 style="background-image: url('slider/F.png'); background-size: cover; background-position: center;">
@@ -60,26 +59,28 @@
             <div class="hero-slide"
                 style="background-image: url('slider/M.png'); background-size: cover; background-position: center;">
             </div>
-            <div class="hero-slides">
-                <div class="hero-slide active"
-                    style="background-image: url('slider/MS.png'); background-size: cover; background-position: center;">
-                </div>
-                <div class="hero-slide"
-                    style="background-image: url('slider/B.png'); background-size: cover; background-position: center;">
-                </div>
-                <div class="hero-slide"
-                    style="background-image: url('slider/BS.png'); background-size: cover; background-position: center;">
-                </div>
+            <div class="hero-slide"
+                style="background-image: url('slider/MS.png'); background-size: cover; background-position: center;">
             </div>
-            <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">❯</button>
-            <button class="slider-arrow next-arrow" onclick="changeSlide(1)">❮</button>
+            <div class="hero-slide"
+                style="background-image: url('slider/B.png'); background-size: cover; background-position: center;">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('slider/BS.png'); background-size: cover; background-position: center;">
+            </div>
         </div>
+        <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">❯</button>
+        <button class="slider-arrow next-arrow" onclick="changeSlide(1)">❮</button>
+    </section>
+
+    <!-- الهيرو -->
+    <section class="hero" id="hero">
         <p class="typing-text" id="typingText"></p>
         <div class="hero-badge">عروض خاصة 🌟</div>
         <h2>مفروشات عالية الجودة</h2>
         <p>بخامات قطنية 100% و بأسعار تنافسية</p>
         <p>نسعى دائما لنكون الأفضل ⭐⭐⭐⭐⭐</p>
-        <button class="hero-btn" onclick="scrollToProducts()">تسوق الأن</button>
+        <button class="hero-btn" onclick="scrollToProducts()">تسوق الآن</button>
         <div class="countdown-box">
             <p class="offer-title">⏰ عرض خاص على بديل السجاد</p>
             <div class="offer-prices">
@@ -89,25 +90,20 @@
                 <span>1×3 | 370 ج</span>
             </div>
             <div class="countdown">
-                <div class="count-item">
-                    <span id="days">00</span>
+                <div class="count-item"><span id="days">00</span>
                     <p>يوم</p>
                 </div>
-                <div class="count-item">
-                    <span id="hours">00</span>
+                <div class="count-item"><span id="hours">00</span>
                     <p>ساعة</p>
                 </div>
-                <div class="count-item">
-                    <span id="minutes">00</span>
+                <div class="count-item"><span id="minutes">00</span>
                     <p>دقيقة</p>
                 </div>
-                <div class="count-item">
-                    <span id="seconds">00</span>
+                <div class="count-item"><span id="seconds">00</span>
                     <p>ثانية</p>
                 </div>
             </div>
         </div>
-
     </section>
 
     <!-- سيكشن المنتجات -->
