@@ -890,34 +890,61 @@ body.dark .feature-item h3 {
 }
 
 .stats {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 20px;
-  background: white;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background: white;
+    flex-wrap: wrap;
 }
 
 .stat-item {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 .stat-icon {
-  font-size: 40px;
-  display: block;
-  margin-bottom: 10px;
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .stat-number {
-  font-size: 40px;
-  font-weight: bold;
-  color: #e91e8c;
-  margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #e91e8c;
+    margin: 0;
 }
 
 .stat-item p {
-  font-size: 14px;
-  color: #666;
-  margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid #e91e8c;
+    color: #e91e8c;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #e91e8c;
+    color: white;
 }
