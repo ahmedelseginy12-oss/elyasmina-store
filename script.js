@@ -113,7 +113,7 @@ function updateCountdown() {
     var diff = endDate - now;
 
     if (diff <= 0) {
-  document.querySelector('.countdown-box').innerHTML = `
+        document.querySelector('.countdown-box').innerHTML = `
     <p class="offer-title">🎉 انتهى العرض</p>
     <p style="color:white; margin-top:10px;">تابعونا للعروض القادمة على صفحتنا!</p>
     <a href="https://www.facebook.com/share/18z5b6tWhp/" 
@@ -121,9 +121,8 @@ function updateCountdown() {
        👍 تابع صفحتنا
     </a>
   `;
-  return;
-}
-
+        return;
+    }
     var days = Math.floor(diff / (1000 * 60 * 60 * 24));
     var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -181,33 +180,67 @@ window.changeSlide = changeSlide;
 
 // Counter Animation
 function animateCounters() {
-  var counters = document.querySelectorAll('.stat-number');
-  counters.forEach(function(counter) {
-    var target = parseInt(counter.getAttribute('data-target'));
-    var count = 0;
-    var increment = target / 100;
-    var timer = setInterval(function() {
-      count += increment;
-      if (count >= target) {
-        counter.innerText = target + '+';
-        clearInterval(timer);
-      } else {
-        counter.innerText = Math.ceil(count);
-      }
-    }, 20);
-  });
+    var counters = document.querySelectorAll('.stat-number');
+    counters.forEach(function (counter) {
+        var target = parseInt(counter.getAttribute('data-target'));
+        var count = 0;
+        var increment = target / 100;
+        var timer = setInterval(function () {
+            count += increment;
+            if (count >= target) {
+                counter.innerText = target + '+';
+                clearInterval(timer);
+            } else {
+                counter.innerText = Math.ceil(count);
+            }
+        }, 20);
+    });
 }
 
 // تشغيل الكاونتر لما الزائر يوصله
 var statsSection = document.querySelector('.stats');
 var animated = false;
 
-window.addEventListener('scroll', function() {
-  if (!animated && statsSection) {
-    var position = statsSection.getBoundingClientRect().top;
-    if (position < window.innerHeight) {
-      animateCounters();
-      animated = true;
+window.addEventListener('scroll', function () {
+    if (!animated && statsSection) {
+        var position = statsSection.getBoundingClientRect().top;
+        if (position < window.innerHeight) {
+            animateCounters();
+            animated = true;
+        }
     }
-  }
 });
+
+// فلترة المنتجات
+function filterProducts(category, btn) {
+    var cards = document.querySelectorAll('.product-card');
+    var buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(function (b) {
+        b.classList.remove('active');
+    });
+
+    btn.classList.add('active');
+
+    cards.forEach(function (card) {
+        var cardCategory = card.getAttribute('data-category');
+
+        if (category === 'all') {
+            card.style.display = 'block';
+        } else if (category === 'barans' && (cardCategory === 'barans' || cardCategory === 'barans-atfal')) {
+            card.style.display = 'block';
+        } else if (category === 'malayat' && (cardCategory === 'malayat-kabir' || cardCategory === 'malayat-atfal')) {
+            card.style.display = 'block';
+        } else if (category === 'bataneen' && (cardCategory === 'dafayat' || cardCategory === 'batateen' || cardCategory === 'lehaf')) {
+            card.style.display = 'block';
+        } else if (cardCategory === category) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    AOS.refresh();
+}
+
+window.filterProducts = filterProducts;
