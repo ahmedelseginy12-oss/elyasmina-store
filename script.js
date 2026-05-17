@@ -171,3 +171,36 @@ function changeSlide(direction) {
     heroSlides[currentSlide].classList.add('active');
 }
 window.changeSlide = changeSlide;
+
+// Counter Animation
+function animateCounters() {
+  var counters = document.querySelectorAll('.stat-number');
+  counters.forEach(function(counter) {
+    var target = parseInt(counter.getAttribute('data-target'));
+    var count = 0;
+    var increment = target / 100;
+    var timer = setInterval(function() {
+      count += increment;
+      if (count >= target) {
+        counter.innerText = target + '+';
+        clearInterval(timer);
+      } else {
+        counter.innerText = Math.ceil(count);
+      }
+    }, 20);
+  });
+}
+
+// تشغيل الكاونتر لما الزائر يوصله
+var statsSection = document.querySelector('.stats');
+var animated = false;
+
+window.addEventListener('scroll', function() {
+  if (!animated && statsSection) {
+    var position = statsSection.getBoundingClientRect().top;
+    if (position < window.innerHeight) {
+      animateCounters();
+      animated = true;
+    }
+  }
+});
