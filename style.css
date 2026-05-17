@@ -888,3 +888,36 @@ body.dark .feature-item h3 {
     height: 600px;
     overflow: hidden;
 }
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background: white;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 40px;
+  font-weight: bold;
+  color: #e91e8c;
+  margin: 0;
+}
+
+.stat-item p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
