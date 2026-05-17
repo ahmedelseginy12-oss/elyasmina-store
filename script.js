@@ -113,9 +113,16 @@ function updateCountdown() {
     var diff = endDate - now;
 
     if (diff <= 0) {
-        document.querySelector('.countdown-box').innerHTML = '<p class="offer-title">❌ انتهى العرض</p>';
-        return;
-    }
+  document.querySelector('.countdown-box').innerHTML = `
+    <p class="offer-title">🎉 انتهى العرض</p>
+    <p style="color:white; margin-top:10px;">تابعونا للعروض القادمة على صفحتنا!</p>
+    <a href="https://www.facebook.com/share/18z5b6tWhp/" 
+       style="background:white; color:#e91e8c; padding:10px 20px; border-radius:10px; text-decoration:none; margin-top:15px; display:inline-block; font-weight:bold;">
+       👍 تابع صفحتنا
+    </a>
+  `;
+  return;
+}
 
     var days = Math.floor(diff / (1000 * 60 * 60 * 24));
     var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
