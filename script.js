@@ -1,4 +1,15 @@
 
+// Splash Screen
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        var splash = document.getElementById('splashScreen');
+        splash.style.opacity = '0';
+        setTimeout(function () {
+            splash.style.display = 'none';
+        }, 500);
+    }, 2500);
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     AOS.init({
         duration: 800,
