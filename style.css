@@ -1,4 +1,4 @@
-/* نبدأ بة مشروعنا فى css لمسح التنسيقات الافتراضية للمتصفح */
+
 * {
     margin: 0;
     padding: 0;
@@ -63,8 +63,7 @@ header {
     color: #888;
 }
 
-/* سيكشن الهيرو  */
-
+/* سيكشن الهيرو */
 .hero {
     position: relative;
     text-align: center;
@@ -115,7 +114,7 @@ header {
     text-align: center;
     font-size: 28px;
     margin-bottom: 30px;
-    color: #222;
+    color: whitesmoke;
 }
 
 .products-grid {
@@ -133,18 +132,15 @@ header {
     position: relative;
 }
 
-
 .product-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: 100%;
     margin: 0 auto;
 }
 
-
 .product-card:last-child:nth-child(odd) img {
     height: 350px;
 }
-
 
 .product-img {
     font-size: 50px;
@@ -172,7 +168,6 @@ header {
     transform: scale(1.05);
 }
 
-
 .product-card h3 {
     font-size: 16px;
     color: #222;
@@ -186,14 +181,12 @@ header {
 
 .price {
     color: #e91e8c !important;
-    /* لون وردي للسعر */
     font-size: 18px !important;
     font-weight: bold;
 }
 
 .add-btn {
     background: #e91e8c;
-    /* خلفية وردية */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -212,22 +205,18 @@ header {
 
 .feature-item {
     margin-bottom: 30px;
-    /* مسافة بين كل ميزة */
 }
 
 .feature-icon {
     font-size: 40px;
     background: #fce4ec;
-    /* خلفية وردية فاتحة */
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    /* دايرة */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto 15px;
-    /* مركز + مسافة تحت */
 }
 
 .feature-item h3 {
@@ -240,7 +229,6 @@ header {
     font-size: 14px;
     color: #888;
 }
-
 
 .contact {
     text-align: center;
@@ -275,7 +263,6 @@ header {
 
 .contact-icon {
     background: #fce4ec;
-    /* دايرة وردية فاتحة */
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -316,7 +303,6 @@ header {
 
 .call-btn {
     background: #4caf50;
-    /* أخضر */
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -328,7 +314,6 @@ header {
 
 .facebook-btn {
     background: #1877f2;
-    /* أزرق فيسبوك */
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -340,7 +325,6 @@ header {
 
 footer {
     background-color: #1a1a2e;
-    /* خلفية داكنة */
     color: white;
     text-align: center;
     padding: 40px 20px;
@@ -362,7 +346,6 @@ footer {
 footer p {
     font-size: 14px;
     color: #aaa;
-    /* رمادي فاتح */
     margin: 8px 0;
 }
 
@@ -384,13 +367,11 @@ footer p {
 .copyright {
     font-size: 12px !important;
     color: #666 !important;
-    /* رمادي داكن */
     margin-top: 20px !important;
 }
 
 .wishlist-btn {
     position: absolute;
-    /* بيحط القلب فوق الصورة */
     top: 10px;
     left: 10px;
     background: white;
@@ -425,7 +406,6 @@ body.dark .dark-mode-btn {
     background: #333;
     color: white;
 }
-
 
 body.dark header {
     background-color: #16213e;
@@ -465,102 +445,14 @@ body.dark .logo-text p {
 
 body.dark .product-card h3 {
     color: white;
-    /* اسم المنتج أبيض في الدارك مود */
 }
 
 body.dark .product-card p {
     color: #ccc;
-    /* الوصف رمادي فاتح */
-}
-
-body.dark .product-card {
-    background-color: #16213e;
-    color: white;
 }
 
 body.dark .feature-item h3 {
     color: #ccc;
-}
-
-@media (max-width: 768px) {
-
-    /* الهيدر */
-    header {
-        padding: 10px 15px;
-    }
-
-    .logo-text h1 {
-        font-size: 16px;
-    }
-
-    /* البانر */
-    .hero {
-        padding: 40px 15px;
-    }
-
-    .hero h2 {
-        font-size: 24px;
-
-        header {
-            flex-wrap: wrap;
-
-            header {
-                flex-wrap: wrap;
-            }
-
-            .audio-player {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                margin-top: 5px;
-                max-width: 100% !important;
-                padding: 5px 10px !important;
-            }
-
-            .header-icons {
-                order: 1;
-            }
-
-            .header-logo {
-                order: 2;
-            }
-
-        }
-
-        .audio-player {
-            order: 3;
-            width: 100%;
-            justify-content: center;
-            margin-top: 5px;
-            max-width: 100% !important;
-            padding: 5px 10px !important;
-        }
-
-        .header-icons {
-            order: 1;
-        }
-
-        .header-logo {
-            order: 2;
-        }
-
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-buttons {
-        flex-direction: column;
-    }
-
-    .whatsapp-btn,
-    .call-btn,
-    .facebook-btn {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
 }
 
 .whatsapp-float {
@@ -674,12 +566,6 @@ body.dark .feature-item h3 {
     margin-bottom: 8px;
 }
 
-.offer-details {
-    font-size: 13px;
-    color: white;
-    margin-bottom: 15px;
-}
-
 .countdown {
     display: flex;
     justify-content: center;
@@ -723,39 +609,6 @@ body.dark .feature-item h3 {
     font-weight: bold;
 }
 
-@media (max-width: 480px) {
-    .audio-player {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: #fce4ec;
-        padding: 8px 20px;
-        border-radius: 20px;
-        justify-content: center;
-        max-width: 200px;
-    }
-
-    .audio-player button {
-        font-size: 14px !important;
-    }
-
-    .audio-player span {
-        font-size: 10px !important;
-    }
-}
-
-.contact h2 {
-    color: white;
-}
-
-.contact-item h4 {
-    color: white;
-}
-
-.products h2 {
-    color: whitesmoke;
-}
-
 .navbar {
     background: white;
     padding: 10px 20px;
@@ -787,11 +640,6 @@ body.dark .feature-item h3 {
     color: white;
 }
 
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
 .hero-slides {
     position: absolute;
     top: 0;
@@ -810,7 +658,7 @@ body.dark .feature-item h3 {
     opacity: 0;
     transition: opacity 1s ease;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
@@ -832,6 +680,26 @@ body.dark .feature-item h3 {
     height: 100%;
     background: rgba(0, 0, 0, 0.55);
     z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero>*:not(.hero-slides) {
+    position: relative;
+    z-index: 2;
 }
 
 .slider-arrow {
@@ -861,26 +729,6 @@ body.dark .feature-item h3 {
 .next-arrow {
     left: 15px;
     right: auto;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.2) 0%,
-            rgba(0, 0, 0, 0.5) 50%,
-            rgba(0, 0, 0, 0.2) 100%);
-    z-index: 1;
-}
-
-.hero>*:not(.hero-slides) {
-    position: relative;
-    z-index: 2;
 }
 
 .slider-section {
@@ -965,6 +813,8 @@ body.dark .feature-item h3 {
     transition: all 0.3s ease;
     color: white;
     font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .social-icons a:hover {
@@ -987,17 +837,13 @@ body.dark .feature-item h3 {
     background: #ea4335;
 }
 
-.social-icons img {
-    filter: invert(0);
-}
-
 .splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(253, 248, 240, 0.7);
+    background: rgba(253, 248, 240, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1025,5 +871,70 @@ body.dark .feature-item h3 {
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .audio-player {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+        max-width: 100% !important;
+        padding: 5px 10px !important;
+    }
+
+    .header-icons {
+        order: 1;
+    }
+
+    .header-logo {
+        order: 2;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .whatsapp-btn,
+    .call-btn,
+    .facebook-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .slider-section {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .audio-player button {
+        font-size: 14px !important;
+    }
+
+    .audio-player span {
+        font-size: 10px !important;
     }
 }
