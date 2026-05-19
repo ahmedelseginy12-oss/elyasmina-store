@@ -1,11 +1,31 @@
 
+// PWA Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function (reg) {
+                console.log('SW registered');
+            })
+            .catch(function (err) {
+                console.log('SW error:', err);
+            });
+    });
+}
+
 // Splash Screen
 window.addEventListener('load', function () {
     setTimeout(function () {
         var splash = document.getElementById('splashScreen');
-        splash.style.opacity = '0';
+        var logo = document.querySelector('.splash-logo');
+
+        // انيميشن الاختفاء
+        logo.style.animation = 'splashExit 0.5s ease forwards';
+
         setTimeout(function () {
-            splash.style.display = 'none';
+            splash.style.opacity = '0';
+            setTimeout(function () {
+                splash.style.display = 'none';
+            }, 500);
         }, 500);
     }, 2500);
 });
@@ -255,3 +275,34 @@ function filterProducts(category, btn) {
 }
 
 window.filterProducts = filterProducts;
+
+// EmailJS
+emailjs.init('OUkdZ5koxrUA0BY8f');
+
+function sendEmail() {
+    var name = document.getElementById('from_name').value;
+    var phone = document.getElementById('phone').value;
+    var message = document.getElementById('message').value;
+
+    if (!name || !message) {
+        document.getElementById('formStatus').innerText = '⚠️ من فضلك اكتب اسمك ورسالتك!';
+        return;
+    }
+
+    document.getElementById('formStatus').innerText = '⏳ جاري الإرسال...';
+
+    emailjs.send('service_h9vu1ea', 'template_8axlb3o', {
+        from_name: name,
+        phone: phone,
+        message: message
+    }).then(function () {
+        document.getElementById('formStatus').innerText = '✅ تم الإرسال بنجاح!';
+        document.getElementById('from_name').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('message').value = '';
+    }).catch(function () {
+        document.getElementById('formStatus').innerText = '❌ حصل خطأ، جرب تاني!';
+    });
+}
+
+window.sendEmail = sendEmail;
