@@ -14,8 +14,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elyasmina - مفروشات عالية الجودة</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e91e8c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="الياسمينا">
+    <link rel="apple-touch-icon" href="Logo Elyasmina.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -308,7 +314,19 @@
             </a>
 
             <div class="contact-buttons">
-                ...
+
+                <div class="contact-form">
+                    <h3>📧 راسلنا أو اطلب بكميات</h3>
+                    <p class="form-hint">💡 لطلب كميات كبيرة تواصل معنا للحصول على أفضل الأسعار!</p>
+
+                    <input type="text" id="from_name" placeholder="اسمك" required>
+                    <input type="tel" id="phone" placeholder="رقم تليفونك">
+                    <textarea id="message" placeholder="رسالتك أو تفاصيل طلبك..." rows="4" required></textarea>
+
+                    <button onclick="sendEmail()" class="send-btn">إرسال 📨</button>
+                    <p id="formStatus"></p>
+                </div>
+
             </div>
 
         </div>
