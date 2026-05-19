@@ -854,6 +854,11 @@ body.dark .feature-item h3 {
     width: 400px;
     max-width: 80%;
     animation: splashAnim 1.5s ease forwards;
+    border-radius: 50%;
+    border: 5px solid #e91e8c;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 30px rgba(233, 30, 140, 0.3);
 }
 
 @keyframes splashAnim {
