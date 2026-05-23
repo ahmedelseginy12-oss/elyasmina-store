@@ -185,15 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // كود هيرو سلايدر 
-    // // Hero Slider
-    // var heroSlides = document.querySelectorAll('.hero-slide');
-    // var currentSlide = 0;
-    // setInterval(function () {
-    //     heroSlides[currentSlide].classList.remove('active');
-    //     currentSlide = (currentSlide + 1) % heroSlides.length;
-    //     heroSlides[currentSlide].classList.add('active');
-    // }, 3000);
-
     // function changeSlide(direction) {
     //     heroSlides[currentSlide].classList.remove('active');
     //     currentSlide = (currentSlide + direction + heroSlides.length) % heroSlides.length;
