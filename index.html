@@ -87,7 +87,8 @@
         <audio id="audioPlayer"></audio>
     </div>
 
-    <section class="slider-section">
+    <!-- كود سلايدر سيكشن  -->
+    <!-- <section class="slider-section">
         <div class="hero-slides">
             <div class="hero-slide active"
                 style="background-image: url('slider/Logo.png'); background-size: cover; background-position: center;">
@@ -116,6 +117,15 @@
         </div>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">❯</button>
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">❮</button>
+    </section> -->
+
+    <!-- سيكشن فيديو العرض بدلا لسلايدر -->
+
+    <section class="video-section">
+        <video id="heroVideo" autoplay muted loop playsinline>
+            <source src="Elyasmina-video.mp4" type="video/mp4">
+        </video>
+        <button class="sound-btn" onclick="toggleSound()" id="soundBtn">🔇</button>
     </section>
 
     <!-- الهيرو -->
