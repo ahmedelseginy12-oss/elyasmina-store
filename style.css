@@ -1025,65 +1025,39 @@ body.dark .feature-item h3 {
 /* خاص بالفيديو */
 
 .video-section {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 
-    height: 85vh;
-    max-height: 700px;
+  height: 60vh;
+  max-height: 550px;
 
-    overflow: hidden;
-    border-radius: 15px;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-/* الفيديو نفسه */
+/* الفيديو */
 .video-section video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #f5f5f5;
-    display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
 }
 
-/* زر الصوت */
-.sound-btn {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-
-    border: none;
-    padding: 10px 14px;
-
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-
-    z-index: 10;
-}
-
-/* تابلت */
+/* 🟢 موبايل */
 @media (max-width: 768px) {
-    .video-section {
-        height: 40vh;
-        border-radius: 10px;
-    }
+  .video-section {
+    height: 45vh;
+    border-radius: 10px;
+  }
 }
 
-/* موبايل */
+/* 🟢 موبايل صغير */
 @media (max-width: 480px) {
-    .video-section {
-        height: 30vh;
-        border-radius: 8px;
-    }
-
-    .sound-btn {
-        bottom: 10px;
-        left: 10px;
-        padding: 8px 12px;
-        font-size: 16px;
-    }
+  .video-section {
+    height: 35vh;
+    border-radius: 8px;
+  }
 }
