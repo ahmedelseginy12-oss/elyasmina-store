@@ -12,54 +12,197 @@ body {
     background-size: 80px 80px;
 }
 
+/* ================= HEADER ================= */
+
 header {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    flex-direction: column;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #fff;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 10px 20px;
+
+    background: #fff;
+
     border-bottom: 1px solid #f0f0f0;
+
     position: sticky;
-    box-shadow: 0 2px 15px rgba(233, 30, 140, 0.15);
     top: 0;
     z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(233, 30, 140, 0.15);
 }
+
+
+/* ===== الوضع الليلي ===== */
 
 .header-icons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    font-size: 22px;
-}
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-circle {
-    width: 45px;
-    height: 45px;
-    background-color: #e91e8c;
-    border-radius: 50%;
-    color: white;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.dark-mode-btn {
+    border: none;
+    background: #e91e8c;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
     font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.dark-mode-btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* ===== السوشيال ===== */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: white;
+
     font-size: 20px;
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ===== ألوان الأيقونات ===== */
+
+.fb-icon {
+    background: #1877f2;
+}
+
+.tiktok-icon {
+    background: #000;
+}
+
+.wa-icon {
+    background: #25D366;
+}
+
+.gmail-icon {
+    background: #EA4335;
+}
+
+
+/* ===== اللوجو ===== */
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: center;
+}
+
+.logo-circle {
+    width: 55px;
+    height: 55px;
+
+    background: #e91e8c;
+
+    border-radius: 50%;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .logo-text h1 {
-    font-size: 20px;
+    margin: 0;
+
+    font-size: 26px;
+
     color: #222;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
 }
 
 .logo-text p {
-    font-size: 12px;
-    color: #888;
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+/* ===== الموبايل ===== */
+
+@media(max-width:768px) {
+
+    header {
+        padding: 15px 10px;
+    }
+
+    .logo-text h1 {
+        font-size: 28px;
+    }
+
+    .logo-text p {
+        font-size: 13px;
+    }
+
+    .social-icons a {
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+    }
+
+    .dark-mode-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
 }
 
 /* سيكشن الهيرو */
@@ -70,7 +213,7 @@ header {
     background: linear-gradient(135deg, #1a1a1a, #333);
     min-height: 550px;
     height: auto;
-    padding: 120px 20px 40px;
+    padding: 40px 20px 40px;
     overflow: hidden;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -532,7 +675,7 @@ body.dark .feature-item h3 {
     justify-content: center;
     gap: 8px;
     background: #fce4ec;
-    padding: 8px 20px;
+    padding: 5px 10px;
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -540,7 +683,7 @@ body.dark .feature-item h3 {
 .audio-player button {
     background: none;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -1009,8 +1152,39 @@ body.dark .feature-item h3 {
     }
 }
 
-.whatsapp-text {
-    font-size: 12px;
-    color: black;
-    font-weight: 900;
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.whatsapp-fixed {
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 18px;
+
+    border-radius: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-fixed i {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-fixed span {
+    white-space: nowrap;
 }
