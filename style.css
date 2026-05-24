@@ -1159,12 +1159,19 @@ body.dark .feature-item h3 {
     z-index: 9999;
 }
 
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
 .whatsapp-fixed {
     background: #25D366;
     color: white;
     text-decoration: none;
 
-    padding: 12px 18px;
+    padding: 10px 16px;
 
     border-radius: 40px;
 
@@ -1172,14 +1179,15 @@ body.dark .feature-item h3 {
     align-items: center;
     gap: 10px;
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.70);
 }
 
 .whatsapp-fixed i {
-    font-size: 28px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1187,5 +1195,5 @@ body.dark .feature-item h3 {
 
 .whatsapp-fixed span {
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 13px;
 }
