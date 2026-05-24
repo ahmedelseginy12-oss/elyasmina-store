@@ -7,21 +7,6 @@
 //     });
 // }
 
-// Splash Screen
-window.addEventListener('load', function () {
-    setTimeout(function () {
-        var splash = document.getElementById('splashScreen');
-        var logo = document.querySelector('.splash-logo');
-        logo.style.animation = 'splashExit 0.5s ease forwards';
-        setTimeout(function () {
-            splash.style.opacity = '0';
-            setTimeout(function () {
-                splash.style.display = 'none';
-            }, 500);
-        }, 500);
-    }, 2500);
-});
-
 document.addEventListener('DOMContentLoaded', function () {
 
     // AOS
@@ -184,13 +169,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // كود هيرو سلايدر 
-    // function changeSlide(direction) {
-    //     heroSlides[currentSlide].classList.remove('active');
-    //     currentSlide = (currentSlide + direction + heroSlides.length) % heroSlides.length;
-    //     heroSlides[currentSlide].classList.add('active');
-    // }
-    // window.changeSlide = changeSlide;
+
+    function changeSlide(direction) {
+        heroSlides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + heroSlides.length) % heroSlides.length;
+        heroSlides[currentSlide].classList.add('active');
+    }
+    window.changeSlide = changeSlide;
 
     // Counter Animation
     function animateCounters() {
