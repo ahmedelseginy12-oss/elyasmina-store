@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برانس قطنية - مفروشات الياسمينا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="foat-style.css">
+    <style>
+        .ask-price-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .ask-price-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-icons"><button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 الوضع الليلي</button>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/18z5b6tWhp/" target="_blank" class="fb-icon">f</a>
+            <a href="https://www.tiktok.com/@furniturealyasmin" target="_blank" class="tiktok-icon">T</a>
+            <a href="https://wa.me/201033304242" target="_blank" class="wa-icon">W</a>
+            <a href="mailto:furniturealyasmina@gmail.com" class="gmail-icon">G</a>
+        </div>
+        <div class="header-logo">
+            <div class="logo-text">
+                <h1>Elyasmina</h1>
+                <p>مفروشات عالية الجودة</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">🏠 الرئيسية</a></li>
+            <li><a href="index.html#products">🛍️ منتجاتنا</a></li>
+            <li><a href="foat.html">🛁 فوط وبشاكير</a></li>
+            <li><a href="#" class="active">🥋 برانس</a></li>
+            <li><a href="index.html#contact">📞 تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <p class="breadcrumb"><a href="index.html">الرئيسية</a> ← برانس قطنية كبير</p>
+        <h1>🥋 برانس قطنية كبير</h1>
+        <p>خامات قطنية 100% • مقاسات من M حتى 3X • ألوان متنوعة</p>
+    </div>
+
+    <div class="hero-slider">
+        <div class="hero-slides" id="heroSlides"></div>
+        <button class="hero-slider-btn prev" onclick="heroSlide(-1)">›</button>
+        <button class="hero-slider-btn next" onclick="heroSlide(1)">‹</button>
+        <div class="hero-dots" id="heroDots"></div>
+    </div>
+
+    <div class="update-notice">⚠️ الأسعار تُحدد عند التواصل — تواصل معنا للحصول على أفضل سعر</div>
+
+    <div style="padding:20px; max-width:860px; margin:0 auto;">
+        <h2 class="section-heading">🥋 برانس كبير — اختر المقاس أولاً</h2>
+        <div class="sizes-grid" id="barans-sizes"></div>
+
+        <div class="colors-panel" id="barans-colors-panel">
+            <p class="colors-panel-title">🎨 اختر اللون للمقاس: <span id="barans-selected-size-label">—</span></p>
+            <div class="colors-grid" id="barans-colors-grid"></div>
+        </div>
+
+        <div class="order-panel" id="barans-order-panel">
+            <div class="order-summary" id="barans-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span class="qty-val" id="barans-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice()">
+                <i class="fab fa-whatsapp"></i> اسأل عن السعر 💬
+            </button>
+            <button class="order-btn" onclick="sendOrder()">
+                <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-text">
+                <h1 style="font-size:22px;color:white;">Elyasmina</h1>
+            </div>
+        </div>
+        <p>مفروشات عالية الجودة بخامات قطنية 100% و بأسعار تنافسية</p>
+        <p class="stars">⭐⭐⭐⭐⭐</p>
+        <p class="copyright">© Elyasmina 2025</p>
+        <p class="developer">تم التطوير بواسطة : احمد السجينى</p>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/201033304242" class="whatsapp-fixed" target="_blank">
+            <span>كيف يمكنني مساعدتك ؟</span><i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+    <script>
+        const BARANS_COLORS = [
+            { name: 'أبيض', hex: '#ffffff', border: true, emoji: '🤍' },
+            { name: 'بيج', hex: '#f5deb3', border: false, emoji: '🧡' },
+            { name: 'كحلي', hex: '#1b2a6b', border: false, emoji: '🔵' },
+            { name: 'رمادي', hex: '#9e9e9e', border: false, emoji: '🩶' },
+            { name: 'أسود', hex: '#222222', border: false, emoji: '🖤' },
+            { name: 'بني', hex: '#795548', border: false, emoji: '🤎' },
+            { name: 'زيتي', hex: '#556b2f', border: false, emoji: '💚' },
+            { name: 'أحمر غامق', hex: '#800020', border: false, emoji: '❤️' },
+            { name: 'سماوي فاتح', hex: '#87ceeb', border: false, emoji: '💙' },
+            { name: 'وردي فاتح', hex: '#ffb6c1', border: false, emoji: '🩷' },
+        ];
+        const BARANS_SIZES = [
+            { label: 'M', desc: 'مقاس وسط' },
+            { label: 'L', desc: 'مقاس كبير' },
+            { label: 'XL', desc: 'مقاس كبير جداً' },
+            { label: '2X', desc: 'مقاس كبير جداً ٢' },
+            { label: '3X', desc: 'مقاس كبير جداً ٣' },
+        ];
+        const HERO_SLIDES = [
+            { img: 'product-pics/barans-kbir-1.png' },
+            { img: 'product-pics/barans-kbir-2.png' },
+            { img: 'product-pics/barans-kbir-3.png' },
+            { img: 'product-pics/barans-kbir-4.png' },
+            { img: 'product-pics/barans-kbir-5.png' },
+        ];
+
+        (function () {
+            const c = document.getElementById('heroSlides'), d = document.getElementById('heroDots');
+            HERO_SLIDES.forEach((s, i) => {
+                const sl = document.createElement('div'); sl.className = 'hero-slide';
+                sl.innerHTML = `<img src="${s.img}" alt="برانس كبير" style="width:100%;height:100%;object-fit:contain;border-radius:16px;">`;
+                c.appendChild(sl);
+                const dot = document.createElement('div'); dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goHeroSlide(i); d.appendChild(dot);
+            });
+        })();
+        let heroIdx = 0;
+        function goHeroSlide(i) {
+            heroIdx = (i + HERO_SLIDES.length) % HERO_SLIDES.length;
+            document.getElementById('heroSlides').style.transform = `translateX(${heroIdx * 100}%)`;
+            document.querySelectorAll('.hero-dot').forEach((d, j) => d.classList.toggle('active', j === heroIdx));
+        }
+        function heroSlide(dir) { goHeroSlide(heroIdx + dir); }
+        setInterval(() => heroSlide(1), 2800);
+
+        const state = { sizeIdx: null, colorIdx: null, qty: 1 };
+
+        (function () {
+            const grid = document.getElementById('barans-sizes');
+            BARANS_SIZES.forEach((sz, i) => {
+                const card = document.createElement('div'); card.className = 'size-card'; card.id = 'barans-size-' + i;
+                card.innerHTML = `<span class="size-dim">${sz.label}</span><span class="size-desc">${sz.desc}</span>`;
+                card.onclick = () => selectSize(i); grid.appendChild(card);
+            });
+        })();
+
+        function selectSize(idx) {
+            document.querySelectorAll('#barans-sizes .size-card').forEach(c => c.classList.remove('active'));
+            document.getElementById('barans-size-' + idx).classList.add('active');
+            state.sizeIdx = idx; state.colorIdx = null; state.qty = 1;
+            document.getElementById('barans-qty').textContent = 1;
+            document.getElementById('barans-selected-size-label').textContent = BARANS_SIZES[idx].label;
+            buildColors();
+            document.getElementById('barans-colors-panel').classList.add('visible');
+            document.getElementById('barans-order-panel').classList.remove('visible');
+            setTimeout(() => document.getElementById('barans-colors-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+        }
+
+        function buildColors() {
+            const grid = document.getElementById('barans-colors-grid'); grid.innerHTML = '';
+            BARANS_COLORS.forEach((c, i) => {
+                const item = document.createElement('div'); item.className = 'color-item'; item.id = 'barans-color-' + i;
+                item.innerHTML = `<div class="color-swatch-box" style="background:${c.hex};${c.border ? 'border-bottom:1px solid #eee;' : ''}">${c.emoji}</div><div class="color-item-name">${c.name}</div>`;
+                item.onclick = () => selectColor(i); grid.appendChild(item);
+            });
+        }
+
+        function selectColor(idx) {
+            document.querySelectorAll('#barans-colors-grid .color-item').forEach(c => c.classList.remove('active'));
+            document.getElementById('barans-color-' + idx).classList.add('active');
+            state.colorIdx = idx;
+            const sz = BARANS_SIZES[state.sizeIdx], cl = BARANS_COLORS[idx];
+            document.getElementById('barans-order-summary').innerHTML =
+                `<strong>📦 المنتج:</strong> برنس قطني كبير<br>
+         <strong>📐 المقاس:</strong> ${sz.label} — ${sz.desc}<br>
+         <strong>🎨 اللون:</strong> ${cl.name}<br>
+         <strong>🔢 الكمية:</strong> <span id="barans-qty-display">${state.qty}</span> قطعة<br>
+         <strong>💬 السعر:</strong> سيتم التواصل لتحديد السعر`;
+            document.getElementById('barans-order-panel').classList.add('visible');
+            setTimeout(() => {
+                document.getElementById('barans-order-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                initStock(document.getElementById('barans-order-panel'));
+            }, 100);
+        }
+
+        function changeQty(delta) {
+            state.qty = Math.max(1, state.qty + delta);
+            document.getElementById('barans-qty').textContent = state.qty;
+            const d = document.getElementById('barans-qty-display'); if (d) d.textContent = state.qty;
+        }
+
+        function askPrice() {
+            if (state.sizeIdx === null) { alert('من فضلك اختر المقاس أولاً'); return; }
+            if (state.colorIdx === null) { alert('من فضلك اختر اللون أولاً'); return; }
+            const sz = BARANS_SIZES[state.sizeIdx], cl = BARANS_COLORS[state.colorIdx];
+            const msg = 'السلام عليكم 👋\nأنا مهتم بـ: برنس قطني كبير\n📐 المقاس: ' + sz.label + ' — ' + sz.desc + '\n🎨 اللون: ' + cl.name + '\n🔢 الكمية: ' + state.qty + ' قطعة\n\n💬 محتاج أعرف السعر من فضلك 🙏';
+            window.open('https://wa.me/201033304242?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function sendOrder() {
+            if (state.sizeIdx === null) { alert('من فضلك اختر المقاس أولاً'); return; }
+            if (state.colorIdx === null) { alert('من فضلك اختر اللون أولاً'); return; }
+            const sz = BARANS_SIZES[state.sizeIdx], cl = BARANS_COLORS[state.colorIdx];
+            const msg = '🛍️ طلب جديد من موقع الياسمينا\n\n📦 المنتج: برنس قطني كبير\n📐 المقاس: ' + sz.label + ' — ' + sz.desc + '\n🎨 اللون: ' + cl.name + '\n🔢 الكمية: ' + state.qty + ' قطعة\n\nأرجو التواصل لتأكيد الطلب والسعر 🙏';
+            window.open('https://wa.me/201033304242?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            document.querySelector('.dark-mode-btn').textContent = document.body.classList.contains('dark') ? '☀️ الوضع النهاري' : '🌙 الوضع الليلي';
+        }
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollTop').style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
