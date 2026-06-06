@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // زرار أطلبنا الآن
     document.querySelectorAll('.add-btn').forEach(function (btn) {
+        if (btn.tagName === 'A') return;
         btn.addEventListener('click', function () {
             var productName = this.closest('.product-card').querySelector('h3').innerText;
             var message = 'السلام عليكم، أنا مهتم بـ: ' + productName;
@@ -276,4 +277,32 @@ document.addEventListener('DOMContentLoaded', function () {
     window.sendEmail = sendEmail;
 
 });
+
+/* ===== مشاركة المنتج ===== */
+function shareWA() {
+    const text = encodeURIComponent('شوف المنتج ده من مفروشات الياسمينا 🛍️\n' + window.location.href);
+    window.open('https://wa.me/?text=' + text, '_blank');
+}
+function shareFB() {
+    const url = encodeURIComponent(window.location.href);
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+}
+function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+        btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+            btn.innerHTML = '<i class="fas fa-link"></i> نسخ الرابط';
+            btn.classList.remove('copied');
+        }, 2500);
+    });
+}
+function initStock(panel) {
+    const stock = Math.floor(Math.random() * 7) + 3;
+    const pct = Math.round((stock / 10) * 100);
+    const numEl = panel.querySelector('.stock-num');
+    const barEl = panel.querySelector('.stock-bar');
+    if (numEl) numEl.textContent = stock;
+    if (barEl) setTimeout(function () { barEl.style.width = pct + '%'; }, 300);
+}
 
