@@ -328,15 +328,26 @@ header {
 }
 
 .add-btn {
-    background: #e91e8c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    background: white;
+    color: #e91e8c;
+    border: 2px solid #e91e8c;
+    padding: 12px 20px;
+    border-radius: 25px;
     margin-top: 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 700;
     width: 100%;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.add-btn:hover {
+    background: #e91e8c;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 30, 140, 0.35);
 }
 
 .features {
@@ -1150,13 +1161,6 @@ body.dark .feature-item h3 {
 
         font-size: 18px;
     }
-}
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
 }
 
 .whatsapp-float {
