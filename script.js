@@ -306,3 +306,93 @@ function initStock(panel) {
     if (barEl) setTimeout(function () { barEl.style.width = pct + '%'; }, 300);
 }
 
+
+/* ===== شريط الوقت والصلاة ===== */
+(function initPrayerBar() {
+    if (!document.getElementById('prayer-bar')) return;
+
+    // الصلوات اللي هنعرضها
+    const PRAYER_KEYS = ['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+    const PRAYER_AR = { Fajr: 'الفجر', Sunrise: 'الشروق', Dhuhr: 'الظهر', Asr: 'العصر', Maghrib: 'المغرب', Isha: 'العشاء' };
+
+    // تحديث الساعة كل ثانية
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+        const dateAr = now.toLocaleDateString('ar-EG-u-ca-islamic', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+        const dateMi = now.toLocaleDateString('ar-EG', {
+            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+        });
+        const el = document.getElementById('pb-time');
+        const de = document.getElementById('pb-date');
+        if (el) el.textContent = '🕐 ' + time;
+        if (de) de.textContent = dateMi + '  |  ' + dateAr;
+
+        // تحديث الصلاة الحالية
+        highlightCurrentPrayer(now);
+    }
+
+    function highlightCurrentPrayer(now) {
+        const items = document.querySelectorAll('.pb-prayer-item');
+        if (!items.length) return;
+        const nowMin = now.getHours() * 60 + now.getMinutes();
+        let activeIdx = 0;
+        items.forEach((item, i) => {
+            const t = item.dataset.min;
+            if (t && parseInt(t) <= nowMin) activeIdx = i;
+            item.classList.remove('active');
+        });
+        items[activeIdx].classList.add('active');
+    }
+
+    function timeToMin(t) {
+        const [h, m] = t.split(':').map(Number);
+        return h * 60 + m;
+    }
+
+    function renderPrayers(timings) {
+        const el = document.getElementById('pb-prayers');
+        if (!el) return;
+        el.innerHTML = '';
+        el.className = 'pb-prayers';
+        PRAYER_KEYS.forEach(k => {
+            if (!timings[k]) return;
+            const t = timings[k].replace(/ \(.*\)/, '');
+            const div = document.createElement('div');
+            div.className = 'pb-prayer-item';
+            div.dataset.min = timeToMin(t);
+            div.innerHTML = `<span class="pb-prayer-name">${PRAYER_AR[k]}</span><span class="pb-prayer-time">${t}</span>`;
+            el.appendChild(div);
+        });
+        highlightCurrentPrayer(new Date());
+    }
+
+    function fetchPrayers(lat, lng) {
+        const today = new Date();
+        const d = today.getDate(), m = today.getMonth() + 1, y = today.getFullYear();
+        fetch(`https://api.aladhan.com/v1/timings/${d}-${m}-${y}?latitude=${lat}&longitude=${lng}&method=5`)
+            .then(r => r.json())
+            .then(data => {
+                if (data.code === 200) renderPrayers(data.data.timings);
+            })
+            .catch(() => {
+                const el = document.getElementById('pb-prayers');
+                if (el) el.textContent = '🕌 تعذر تحميل المواقيت';
+            });
+    }
+
+    // جيب الموقع
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            pos => fetchPrayers(pos.coords.latitude, pos.coords.longitude),
+            () => fetchPrayers(30.0444, 31.2357) // القاهرة افتراضي
+        );
+    } else {
+        fetchPrayers(30.0444, 31.2357);
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+})();
