@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - مفروشات الياسمينا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="foat-style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #e91e8c, #c2185b);
+            color: white;
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+        .about-hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 10px; }
+        .about-hero p  { font-size: 16px; opacity: 0.9; }
+
+        .about-section {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .story-block {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(233,30,140,0.08);
+            border-right: 5px solid #e91e8c;
+            line-height: 2;
+            font-size: 15px;
+            color: #444;
+        }
+        .story-block p { margin-bottom: 18px; }
+        .story-block p:last-child { margin-bottom: 0; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 22px 18px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(233,30,140,0.08);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-icon { font-size: 36px; margin-bottom: 10px; }
+        .feature-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #e91e8c;
+            margin-bottom: 8px;
+        }
+        .feature-desc { font-size: 13px; color: #666; line-height: 1.7; }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #e91e8c, #c2185b);
+            color: white;
+            border-radius: 16px;
+            padding: 20px 25px;
+            text-align: center;
+            min-width: 100px;
+        }
+        .stat-num  { font-size: 28px; font-weight: 900; }
+        .stat-label{ font-size: 12px; opacity: 0.9; margin-top: 4px; }
+
+        .contact-block {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        .contact-block h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .contact-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s;
+        }
+        .contact-btn:hover { transform: translateY(-2px); }
+        .btn-wa  { background: #25D366; color: white; }
+        .btn-fb  { background: #1877f2; color: white; }
+        .btn-tt  { background: #010101; color: white; }
+
+        body.dark .story-block  { background: #16213e; color: #ddd; border-color: #e91e8c; }
+        body.dark .feature-card { background: #16213e; }
+        body.dark .feature-desc { color: #aaa; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-icons">
+        <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 الوضع الليلي</button>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/18z5b6tWhp/" target="_blank" class="fb-icon">f</a>
+        <a href="https://www.tiktok.com/@furniturealyasmin" target="_blank" class="tiktok-icon">T</a>
+        <a href="https://wa.me/201033304242" target="_blank" class="wa-icon">W</a>
+        <a href="mailto:furniturealyasmina@gmail.com" class="gmail-icon">G</a>
+    </div>
+    <div class="header-logo">
+        <div class="logo-text"><h1>Elyasmina</h1><p>مفروشات عالية الجودة</p></div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">🏠 الرئيسية</a></li>
+        <li><a href="index.html#products">🛍️ منتجاتنا</a></li>
+        <li><a href="#" class="active">💐 من نحن</a></li>
+        <li><a href="index.html#contact">📞 تواصل معنا</a></li>
+    </ul>
+</nav>
+
+<div class="about-hero">
+    <h1>🌸 قصة مفروشات الياسمينا</h1>
+    <p>رحلتنا نحو منزل أجمل وأكثر راحة</p>
+</div>
+
+<div class="about-section">
+
+    <!-- القصة -->
+    <div class="story-block">
+        <p>تدرك مفروشات الياسمينا تماماً أن المنزل ليس مجرد مساحة للمعيشة، بل هو واحة من السكينة والجمال لعائلتك. من هذا المنطلق، تأسست علامتنا التجارية في جمهورية مصر العربية لتكون رائدة في تقديم وتوفير أرقى خامات المنسوجات المنزلية والمفروشات الفاخرة.</p>
+        <p>تتميز كافة منتجاتنا بأنها مصنعة بأيدي مصرية ماهرة ومنسوجة من أجود أنواع القطن والكتان الطبيعي وخامات القطيفة الممتازة من السوق المحلي، لتجسد الفخامة والجودة العالية التي تستحقها بيوتكم.</p>
+        <p>نقدم لكم تجربة تسوق سهلة وسريعة وندير مبيعاتنا بالكامل مباشرة عبر منصات التواصل والواتساب لتجنب النفقات الإدارية وتوفير أفضل سعر جملة منافس ومباشر للمستهلك في مصر.</p>
+    </div>
+
+    <!-- الإحصائيات -->
+    <div class="stats-row">
+        <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">خامات قطنية</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num">+10</div>
+            <div class="stat-label">منتج متنوع</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">خدمة عملاء</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num">🇪🇬</div>
+            <div class="stat-label">صنع في مصر</div>
+        </div>
+    </div>
+
+    <!-- المميزات -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🇪🇬</div>
+            <div class="feature-title">فخر الصناعة المصرية</div>
+            <div class="feature-desc">نضمن الجودة التامة على جميع القطع، ونشرف بدعم وتوفير منتجات القطن المصري العريقة بجمالية تصاميم تواكب موضة العام.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title">التزام تام بخدمة العملاء</div>
+            <div class="feature-desc">خدمة الرد السريع عبر الواتساب متوفرة طوال اليوم. يمكنك الاستفسار عن الألوان والرسومات وسنرسل لك عينات حية فورية ومقاسات مخصصة.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <div class="feature-title">جودة مضمونة</div>
+            <div class="feature-desc">كل منتج يمر بفحص دقيق قبل الشحن لضمان وصوله بأفضل حالة وأعلى جودة تليق ببيتك.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <div class="feature-title">أسعار منافسة</div>
+            <div class="feature-desc">نتعامل مباشرة بدون وسيط لنوفر لك أفضل سعر جملة ومباشر في السوق المصري.</div>
+        </div>
+    </div>
+
+    <!-- تواصل معنا -->
+    <div class="contact-block">
+        <h3>📞 تواصل معنا الآن</h3>
+        <div class="contact-btns">
+            <a href="https://wa.me/201033304242" target="_blank" class="contact-btn btn-wa">
+                <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+            <a href="https://www.facebook.com/share/18z5b6tWhp/" target="_blank" class="contact-btn btn-fb">
+                <i class="fab fa-facebook"></i> فيسبوك
+            </a>
+            <a href="https://www.tiktok.com/@furniturealyasmin" target="_blank" class="contact-btn btn-tt">
+                <i class="fab fa-tiktok"></i> تيك توك
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-logo"><div class="logo-text"><h1 style="font-size:22px;color:white;">Elyasmina</h1></div></div>
+    <p>مفروشات عالية الجودة بخامات قطنية 100% و بأسعار تنافسية</p>
+    <p class="stars">⭐⭐⭐⭐⭐</p>
+    <p class="copyright">© Elyasmina 2025</p>
+    <p class="developer">تم التطوير بواسطة : احمد السجينى</p>
+</footer>
+
+<div class="whatsapp-float">
+    <a href="https://wa.me/201033304242" class="whatsapp-fixed" target="_blank">
+        <span>كيف يمكنني مساعدتك ؟</span><i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+<script>
+function toggleDarkMode(){
+    document.body.classList.toggle('dark');
+    document.querySelector('.dark-mode-btn').textContent=
+        document.body.classList.contains('dark')?'☀️ الوضع النهاري':'🌙 الوضع الليلي';
+}
+window.addEventListener('scroll',()=>{
+    document.getElementById('scrollTop').style.display=window.pageYOffset>300?'block':'none';
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
