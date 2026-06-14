@@ -1277,3 +1277,36 @@ body.dark .feature-item h3 {
     white-space: nowrap;
     font-size: 13px;
 }
+
+/* ===== زرار تحميل التطبيق ===== */
+.app-download-bar {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    padding: 18px 20px;
+    text-align: center;
+}
+.app-download-bar p {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-family: 'Cairo', sans-serif;
+}
+.app-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e91e8c, #c2185b);
+    color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(233,30,140,0.4);
+}
+.app-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233,30,140,0.5);
+}
+.app-download-btn i { font-size: 20px; }
