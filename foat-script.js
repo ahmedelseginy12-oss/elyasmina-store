@@ -272,3 +272,18 @@ function initStock(panel) {
     if (numEl) numEl.textContent = stock;
     if (barEl) setTimeout(function () { barEl.style.width = pct + '%'; }, 300);
 }
+
+(function(){
+    let lastY = 0;
+    const header = document.querySelector('header');
+    if (!header) return;
+    window.addEventListener('scroll', () => {
+        const currentY = window.pageYOffset;
+        if (currentY > lastY && currentY > 80) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        lastY = currentY;
+    });
+})();
