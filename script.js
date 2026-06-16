@@ -396,3 +396,18 @@ function initStock(panel) {
     updateClock();
     setInterval(updateClock, 1000);
 })();
+
+(function () {
+    let lastY = 0;
+    const header = document.querySelector('header');
+    if (!header) return;
+    window.addEventListener('scroll', () => {
+        const currentY = window.pageYOffset;
+        if (currentY > lastY && currentY > 80) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        lastY = currentY;
+    });
+})();
