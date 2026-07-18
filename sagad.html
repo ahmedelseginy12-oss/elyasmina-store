@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بديل السجاد - مفروشات الياسمينا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="foat-style.css">
+    <style>
+        .ask-price-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .ask-price-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .types-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 22px 15px 5px;
+            flex-wrap: wrap;
+        }
+
+        .type-tab {
+            background: white;
+            border: 2px solid #e91e8c;
+            color: #e91e8c;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .type-tab:hover,
+        .type-tab.active {
+            background: #e91e8c;
+            color: white;
+            box-shadow: 0 5px 18px rgba(233, 30, 140, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .type-desc {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            background: #fce4ec;
+            padding: 8px 16px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+        }
+
+        body.dark .type-tab {
+            background: #16213e;
+            color: #ff6eb4;
+            border-color: #ff6eb4;
+        }
+
+        body.dark .type-tab.active {
+            background: #e91e8c;
+            color: white;
+        }
+
+        body.dark .type-desc {
+            background: #2a0a1e;
+            color: #ccc;
+        }
+        header{display:none !important;}
+        body{padding-top:0 !important;}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">🏠 الرئيسية</a></li>
+            <li><a href="index.html#products">🛍️ منتجاتنا</a></li>
+            <li><a href="foat.html">🛁 فوط وبشاكير</a></li>
+            <li><a href="barans.html">🥋 برانس</a></li>
+            <li><a href="#" class="active">🏠 بديل السجاد</a></li>
+        </ul>
+    </nav>
+    <div class="page-hero">
+        <p class="breadcrumb"><a href="index.html">الرئيسية</a> ← بديل السجاد</p>
+        <h1>🏠 بديل السجاد</h1>
+        <p>ديجيتال • جاكار • بابيلز • سوبر قطيفة • جميع المقاسات</p>
+    </div>
+    <div class="hero-slider">
+        <div class="hero-slides" id="heroSlides"></div>
+        <button class="hero-slider-btn prev" onclick="heroSlide(-1)">›</button>
+        <button class="hero-slider-btn next" onclick="heroSlide(1)">‹</button>
+        <div class="hero-dots" id="heroDots"></div>
+    </div>
+    <div class="types-tabs">
+        <button class="type-tab active" onclick="showType('digital',this)">🖨️ ديجيتال</button>
+        <button class="type-tab" onclick="showType('jakar',this)">🧵 جاكار</button>
+        <button class="type-tab" onclick="showType('pabels',this)">🔶 بابيلز</button>
+        <button class="type-tab" onclick="showType('super',this)">✨ سوبر قطيفة</button>
+    </div>
+
+    <!-- ديجيتال -->
+    <div class="content-section active" id="digital">
+        <p class="type-desc">🖨️ ديجيتال — طباعة عالية الجودة بألوان زاهية ونقوش متنوعة</p>
+        <h2 class="section-heading">اختر المقاس</h2>
+        <div class="sizes-grid" id="digital-sizes"></div>
+        <div class="colors-panel" id="digital-colors-panel">
+            <p class="colors-panel-title">🎨 اختر اللون للمقاس: <span id="digital-selected-size-label">—</span></p>
+            <div class="colors-grid" id="digital-colors-grid"></div>
+        </div>
+        <div class="order-panel" id="digital-order-panel">
+            <div class="order-summary" id="digital-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('digital',-1)">−</button>
+                    <span class="qty-val" id="digital-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('digital',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('digital')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('digital')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <!-- جاكار -->
+    <div class="content-section" id="jakar">
+        <p class="type-desc">🧵 جاكار — نقوش منسوجة بخيوط عالية الجودة وتصاميم أنيقة</p>
+        <h2 class="section-heading">اختر المقاس</h2>
+        <div class="sizes-grid" id="jakar-sizes"></div>
+        <div class="colors-panel" id="jakar-colors-panel">
+            <p class="colors-panel-title">🎨 اختر اللون للمقاس: <span id="jakar-selected-size-label">—</span></p>
+            <div class="colors-grid" id="jakar-colors-grid"></div>
+        </div>
+        <div class="order-panel" id="jakar-order-panel">
+            <div class="order-summary" id="jakar-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('jakar',-1)">−</button>
+                    <span class="qty-val" id="jakar-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('jakar',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('jakar')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('jakar')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <!-- بابيلز -->
+    <div class="content-section" id="pabels">
+        <p class="type-desc">🔶 بابيلز — ناعم ومريح بشكل فقاعي مميز وألوان عصرية</p>
+        <h2 class="section-heading">اختر المقاس</h2>
+        <div class="sizes-grid" id="pabels-sizes"></div>
+        <div class="colors-panel" id="pabels-colors-panel">
+            <p class="colors-panel-title">🎨 اختر اللون للمقاس: <span id="pabels-selected-size-label">—</span></p>
+            <div class="colors-grid" id="pabels-colors-grid"></div>
+        </div>
+        <div class="order-panel" id="pabels-order-panel">
+            <div class="order-summary" id="pabels-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('pabels',-1)">−</button>
+                    <span class="qty-val" id="pabels-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('pabels',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('pabels')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('pabels')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <!-- سوبر قطيفة -->
+    <div class="content-section" id="super">
+        <p class="type-desc">✨ سوبر قطيفة — فائق النعومة وخامة ممتازة للبيوت الراقية</p>
+        <h2 class="section-heading">اختر المقاس</h2>
+        <div class="sizes-grid" id="super-sizes"></div>
+        <div class="colors-panel" id="super-colors-panel">
+            <p class="colors-panel-title">🎨 اختر اللون للمقاس: <span id="super-selected-size-label">—</span></p>
+            <div class="colors-grid" id="super-colors-grid"></div>
+        </div>
+        <div class="order-panel" id="super-order-panel">
+            <div class="order-summary" id="super-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('super',-1)">−</button>
+                    <span class="qty-val" id="super-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('super',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('super')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('super')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-text">
+                <h1 style="font-size:22px;color:white;">Elyasmina</h1>
+            </div>
+        </div>
+        <p>مفروشات عالية الجودة بخامات قطنية 100% و بأسعار تنافسية</p>
+        <p class="stars">⭐⭐⭐⭐⭐</p>
+        <p class="copyright">© Elyasmina 2025</p>
+        <p class="developer">تم التطوير بواسطة : احمد السجينى</p>
+    </footer>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/201033304242" class="whatsapp-fixed" target="_blank">
+            <span>كيف يمكنني مساعدتك ؟</span><i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+    <script>
+        const SIZES = {
+            digital: [
+                { label: '1×2 م', desc: 'مقاس صغير' },
+                { label: '1×3 م', desc: 'مقاس متوسط' },
+                { label: '1×4 م', desc: 'مقاس طويل' },
+                { label: '160×220', desc: 'مقاس غرفة' },
+                { label: '2×3 م', desc: 'مقاس كبير' },
+            ],
+            jakar: [
+                { label: '1×2 م', desc: 'مقاس صغير' },
+                { label: '1×3 م', desc: 'مقاس متوسط' },
+                { label: '1×4 م', desc: 'مقاس طويل' },
+                { label: '160×220', desc: 'مقاس غرفة' },
+                { label: '2×3 م', desc: 'مقاس كبير' },
+            ],
+            pabels: [
+                { label: '1×2 م', desc: 'مقاس صغير' },
+                { label: '1×3 م', desc: 'مقاس متوسط' },
+                { label: '1×4 م', desc: 'مقاس طويل' },
+                { label: '160×220', desc: 'مقاس غرفة' },
+                { label: '2×3 م', desc: 'مقاس كبير' },
+            ],
+            super: [
+                { label: '1×2 م', desc: 'مقاس صغير' },
+                { label: '1×3 م', desc: 'مقاس متوسط' },
+                { label: '1×4 م', desc: 'مقاس طويل' },
+                { label: '160×220', desc: 'مقاس غرفة' },
+                { label: '2×3 م', desc: 'مقاس كبير' },
+            ],
+        };
+        const SAGAD_COLORS = [
+            { name: 'بيج', hex: '#f5deb3', emoji: '🟤' },
+            { name: 'كريمي', hex: '#fffdd0', emoji: '🤍' },
+            { name: 'رمادي فاتح', hex: '#d3d3d3', emoji: '🩶' },
+            { name: 'رمادي غامق', hex: '#808080', emoji: '🩶' },
+            { name: 'بني فاتح', hex: '#c8a882', emoji: '🤎' },
+            { name: 'بني غامق', hex: '#6b3a2a', emoji: '🤎' },
+            { name: 'كحلي', hex: '#1b2a6b', emoji: '🔵' },
+            { name: 'أزرق فاتح', hex: '#87ceeb', emoji: '💙' },
+            { name: 'أخضر زيتي', hex: '#556b2f', emoji: '💚' },
+            { name: 'تيفاني', hex: '#81d8d0', emoji: '🩵' },
+            { name: 'وردي غامق', hex: '#c2185b', emoji: '🩷' },
+            { name: 'أحمر غامق', hex: '#800020', emoji: '❤️' },
+            { name: 'ذهبي', hex: '#d4af37', emoji: '🟡' },
+            { name: 'أسود', hex: '#222222', emoji: '🖤' },
+        ];
+        const TYPE_NAMES = {
+            digital: 'بديل سجاد ديجيتال',
+            jakar: 'بديل سجاد جاكار',
+            pabels: 'بديل سجاد بابيلز',
+            super: 'بديل سجاد سوبر قطيفة',
+        };
+        const HERO_SLIDES = [
+            { img: 'product-pics/sagad-1.png' },
+            { img: 'product-pics/sagad-2.png' },
+            { img: 'product-pics/sagad-3.png' },
+            { img: 'product-pics/sagad-4.png' },
+            { img: 'product-pics/sagad-5.png' },
+        ];
+
+        (function () {
+            const c = document.getElementById('heroSlides'), d = document.getElementById('heroDots');
+            HERO_SLIDES.forEach((s, i) => {
+                const sl = document.createElement('div'); sl.className = 'hero-slide';
+                sl.innerHTML = `<img src="${s.img}" alt=" دفايات" style="width:100%;height:100%;object-fit:contain;border-radius:16px;">`;
+                c.appendChild(sl);
+                const dot = document.createElement('div'); dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goHeroSlide(i); d.appendChild(dot);
+            });
+        })();
+        let heroIdx = 0;
+        function goHeroSlide(i) {
+            heroIdx = (i + HERO_SLIDES.length) % HERO_SLIDES.length;
+            document.getElementById('heroSlides').style.transform = `translateX(${heroIdx * 100}%)`;
+            document.querySelectorAll('.hero-dot').forEach((d, j) => d.classList.toggle('active', j === heroIdx));
+        }
+        function heroSlide(dir) { goHeroSlide(heroIdx + dir); }
+        setInterval(() => heroSlide(1), 2800);
+
+        const types = ['digital', 'jakar', 'pabels', 'super'];
+        types.forEach(type => {
+            const grid = document.getElementById(type + '-sizes');
+            SIZES[type].forEach((sz, i) => {
+                const card = document.createElement('div'); card.className = 'size-card'; card.id = type + '-size-' + i;
+                card.innerHTML = `<span class="size-dim">${sz.label}</span><span class="size-desc">${sz.desc}</span>`;
+                card.onclick = () => selectSize(type, i); grid.appendChild(card);
+            });
+        });
+
+        const state = {};
+        types.forEach(t => { state[t] = { sizeIdx: null, colorIdx: null, qty: 1 }; });
+
+        function selectSize(type, idx) {
+            document.querySelectorAll('#' + type + '-sizes .size-card').forEach(c => c.classList.remove('active'));
+            document.getElementById(type + '-size-' + idx).classList.add('active');
+            state[type].sizeIdx = idx; state[type].colorIdx = null; state[type].qty = 1;
+            document.getElementById(type + '-qty').textContent = 1;
+            document.getElementById(type + '-selected-size-label').textContent = SIZES[type][idx].label;
+            buildColors(type);
+            document.getElementById(type + '-colors-panel').classList.add('visible');
+            document.getElementById(type + '-order-panel').classList.remove('visible');
+            setTimeout(() => document.getElementById(type + '-colors-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+        }
+
+        function buildColors(type) {
+            const grid = document.getElementById(type + '-colors-grid'); grid.innerHTML = '';
+            SAGAD_COLORS.forEach((c, i) => {
+                const item = document.createElement('div'); item.className = 'color-item'; item.id = type + '-color-' + i;
+                item.innerHTML = `<div class="color-swatch-box" style="background:${c.hex};">${c.emoji}</div><div class="color-item-name">${c.name}</div>`;
+                item.onclick = () => selectColor(type, i); grid.appendChild(item);
+            });
+        }
+
+        function selectColor(type, idx) {
+            document.querySelectorAll('#' + type + '-colors-grid .color-item').forEach(c => c.classList.remove('active'));
+            document.getElementById(type + '-color-' + idx).classList.add('active');
+            state[type].colorIdx = idx;
+            const sz = SIZES[type][state[type].sizeIdx], cl = SAGAD_COLORS[idx];
+            document.getElementById(type + '-order-summary').innerHTML =
+                `<strong>📦 المنتج:</strong> ${TYPE_NAMES[type]}<br>
+         <strong>📐 المقاس:</strong> ${sz.label}<br>
+         <strong>🎨 اللون:</strong> ${cl.name}<br>
+         <strong>🔢 الكمية:</strong> <span id="${type}-qty-display">${state[type].qty}</span> قطعة<br>
+         <strong>💬 السعر:</strong> سيتم التواصل لتحديد السعر`;
+            document.getElementById(type + '-order-panel').classList.add('visible');
+            setTimeout(() => {
+                document.getElementById(type + '-order-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                initStock(document.getElementById(type + '-order-panel'));
+            }, 100);
+        }
+
+        function changeQty(type, delta) {
+            state[type].qty = Math.max(1, state[type].qty + delta);
+            document.getElementById(type + '-qty').textContent = state[type].qty;
+            const d = document.getElementById(type + '-qty-display'); if (d) d.textContent = state[type].qty;
+        }
+
+        function askPrice(type) {
+            const s = state[type];
+            if (s.sizeIdx === null) { alert('من فضلك اختر المقاس أولاً'); return; }
+            if (s.colorIdx === null) { alert('من فضلك اختر اللون أولاً'); return; }
+            const sz = SIZES[type][s.sizeIdx], cl = SAGAD_COLORS[s.colorIdx];
+            const msg = 'السلام عليكم 👋\nأنا مهتم بـ: ' + TYPE_NAMES[type] + '\n📐 المقاس: ' + sz.label + '\n🎨 اللون: ' + cl.name + '\n🔢 الكمية: ' + s.qty + ' قطعة\n\n💬 محتاج أعرف السعر من فضلك 🙏';
+            window.open('https://wa.me/201033304242?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function sendOrder(type) {
+            const s = state[type];
+            if (s.sizeIdx === null) { alert('من فضلك اختر المقاس أولاً'); return; }
+            if (s.colorIdx === null) { alert('من فضلك اختر اللون أولاً'); return; }
+            const sz = SIZES[type][s.sizeIdx], cl = SAGAD_COLORS[s.colorIdx];
+            const msg = '🛍️ طلب جديد من موقع الياسمينا\n\n📦 المنتج: ' + TYPE_NAMES[type] + '\n📐 المقاس: ' + sz.label + '\n🎨 اللون: ' + cl.name + '\n🔢 الكمية: ' + s.qty + ' قطعة\n\nأرجو التواصل لتأكيد الطلب والسعر 🙏';
+            window.open('https://wa.me/201033304242?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function showType(id, btn) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.type-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active'); btn.classList.add('active');
+            window.scrollTo({ top: document.querySelector('.types-tabs').offsetTop - 70, behavior: 'smooth' });
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            document.querySelector('.dark-mode-btn').textContent = document.body.classList.contains('dark') ? '☀️ الوضع النهاري' : '🌙 الوضع الليلي';
+        }
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollTop').style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+    </script>
+    <script>
+        function shareWA() {
+            const text = encodeURIComponent('مفروشات الياسمينا - شوف المنتج: ' + window.location.href);
+            window.open('https://wa.me/?text=' + text, '_blank');
+        }
+        function shareFB() {
+            const url = encodeURIComponent(window.location.href);
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+        }
+        function copyLink(btn) {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.innerHTML = '<i class="fas fa-link"></i> نسخ الرابط';
+                    btn.classList.remove('copied');
+                }, 2500);
+            });
+        }
+        function initStock(panel) {
+            const stock = Math.floor(Math.random() * 7) + 3;
+            const pct = Math.round((stock / 10) * 100);
+            const numEl = panel.querySelector('.stock-num');
+            const barEl = panel.querySelector('.stock-bar');
+            if (numEl) numEl.textContent = stock;
+            if (barEl) setTimeout(function() { barEl.style.width = pct + '%'; }, 300);
+        }
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollTop').style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
