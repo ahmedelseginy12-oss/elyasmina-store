@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أطقم ملايات سرير كبير - مفروشات الياسمينا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="foat-style.css">
+    <style>
+        .ask-price-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .ask-price-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .types-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 22px 15px 5px;
+            flex-wrap: wrap;
+        }
+
+        .type-tab {
+            background: white;
+            border: 2px solid #e91e8c;
+            color: #e91e8c;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .type-tab:hover,
+        .type-tab.active {
+            background: #e91e8c;
+            color: white;
+            box-shadow: 0 5px 18px rgba(233, 30, 140, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .type-desc {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            background: #fce4ec;
+            padding: 8px 16px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+        }
+
+        .package-info {
+            background: linear-gradient(135deg, #fce4ec, #fff);
+            border: 1px solid #fce4ec;
+            border-radius: 14px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            line-height: 2;
+        }
+
+        .package-info strong {
+            color: #e91e8c;
+            font-size: 15px;
+        }
+
+        body.dark .type-tab {
+            background: #16213e;
+            color: #ff6eb4;
+            border-color: #ff6eb4;
+        }
+
+        body.dark .type-tab.active {
+            background: #e91e8c;
+            color: white;
+        }
+
+        body.dark .type-desc {
+            background: #2a0a1e;
+            color: #ccc;
+        }
+
+        body.dark .package-info {
+            background: #16213e;
+            border-color: #333;
+            color: #ccc;
+        }
+
+        header {
+            display: none !important;
+        }
+
+        body {
+            padding-top: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">🏠 الرئيسية</a></li>
+            <li><a href="index.html#products">🛍️ منتجاتنا</a></li>
+            <li><a href="foat.html">🛁 فوط وبشاكير</a></li>
+            <li><a href="barans.html">🥋 برانس</a></li>
+            <li><a href="sagad.html">🏠 بديل السجاد</a></li>
+            <li><a href="#" class="active">🛏️ ملايات كبير</a></li>
+        </ul>
+    </nav>
+    <div class="page-hero">
+        <p class="breadcrumb"><a href="index.html">الرئيسية</a> ← أطقم ملايات سرير كبير</p>
+        <h1>🛏️ أطقم ملايات سرير كبير</h1>
+        <p>كرانيش • عادي • چوبير • شرشف + غطاء لحاف + كيس مخدة + 2 خدادية</p>
+    </div>
+    <div class="hero-slider">
+        <div class="hero-slides" id="heroSlides"></div>
+        <button class="hero-slider-btn prev" onclick="heroSlide(-1)">›</button>
+        <button class="hero-slider-btn next" onclick="heroSlide(1)">‹</button>
+        <div class="hero-dots" id="heroDots"></div>
+    </div>
+    <div class="update-notice">✅ تواصل معنا للحصول على أفضل سعر</div>
+    <div class="types-tabs">
+        <button class="type-tab active" onclick="showType('karaneesh',this)">✨ كرانيش</button>
+        <button class="type-tab" onclick="showType('adi',this)">📋 عادي</button>
+        <button class="type-tab" onclick="showType('jobeer',this)">👑 چوبير</button>
+    </div>
+
+    <!-- كرانيش -->
+    <div class="content-section active" id="karaneesh">
+        <p class="type-desc">✨ كرانيش — بحواف مطرزة أنيقة وخامة قطنية فاخرة</p>
+        <div class="package-info"><strong>🎁 محتويات الطقم</strong><br>شرشف سرير كبير • غطاء لحاف • كيس مخدة • 2 خدادية
+        </div>
+        <h2 class="section-heading">🎨 اختر اللون</h2>
+        <div class="colors-grid" id="karaneesh-colors-grid" style="margin-bottom:18px;"></div>
+        <div class="order-panel" id="karaneesh-order-panel">
+            <div class="order-summary" id="karaneesh-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('karaneesh',-1)">−</button>
+                    <span class="qty-val" id="karaneesh-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('karaneesh',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('karaneesh')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('karaneesh')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <!-- عادي -->
+    <div class="content-section" id="adi">
+        <p class="type-desc">📋 عادي — بسيط وعملي بخامة قطنية ناعمة ومتينة</p>
+        <div class="package-info"><strong>🎁 محتويات الطقم</strong><br>شرشف سرير كبير • غطاء لحاف • كيس مخدة • 2 خدادية
+        </div>
+        <h2 class="section-heading">🎨 اختر اللون</h2>
+        <div class="colors-grid" id="adi-colors-grid" style="margin-bottom:18px;"></div>
+        <div class="order-panel" id="adi-order-panel">
+            <div class="order-summary" id="adi-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('adi',-1)">−</button>
+                    <span class="qty-val" id="adi-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('adi',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('adi')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('adi')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <!-- چوبير -->
+    <div class="content-section" id="jobeer">
+        <p class="type-desc">👑 چوبير — خامة فاخرة بتصاميم عصرية راقية</p>
+        <div class="package-info"><strong>🎁 محتويات الطقم</strong><br>شرشف سرير كبير • غطاء لحاف • كيس مخدة • 2 خدادية
+        </div>
+        <h2 class="section-heading">🎨 اختر اللون</h2>
+        <div class="colors-grid" id="jobeer-colors-grid" style="margin-bottom:18px;"></div>
+        <div class="order-panel" id="jobeer-order-panel">
+            <div class="order-summary" id="jobeer-order-summary"></div>
+            <div class="qty-row">
+                <span class="qty-label">🔢 الكمية:</span>
+                <div class="qty-ctrl">
+                    <button class="qty-btn" onclick="changeQty('jobeer',-1)">−</button>
+                    <span class="qty-val" id="jobeer-qty">1</span>
+                    <button class="qty-btn" onclick="changeQty('jobeer',1)">+</button>
+                </div>
+            </div>
+            <div class="share-box">
+                <p class="share-title">📤 شارك المنتج مع أصحابك</p>
+                <div class="share-btns">
+                    <button class="share-btn share-wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i>
+                        واتساب</button>
+                    <button class="share-btn share-fb" onclick="shareFB()"><i class="fab fa-facebook"></i>
+                        فيسبوك</button>
+                    <button class="share-btn share-copy" onclick="copyLink(this)"><i class="fas fa-link"></i> نسخ
+                        الرابط</button>
+                </div>
+            </div>
+            <div class="stock-box">
+                <span class="stock-icon">⚡</span>
+                <span class="stock-text">متبقي فقط <span class="stock-num">--</span> قطعة في المخزون!</span>
+                <div class="stock-bar-wrap">
+                    <div class="stock-bar" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="ask-price-btn" onclick="askPrice('jobeer')"><i class="fab fa-whatsapp"></i> اسأل عن السعر
+                💬</button>
+            <button class="order-btn" onclick="sendOrder('jobeer')"><i class="fab fa-whatsapp"></i> اطلب الآن عبر
+                واتساب</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-text">
+                <h1 style="font-size:22px;color:white;">Elyasmina</h1>
+            </div>
+        </div>
+        <p>مفروشات عالية الجودة بخامات قطنية 100% و بأسعار تنافسية</p>
+        <p class="stars">⭐⭐⭐⭐⭐</p>
+        <p class="copyright">© Elyasmina 2025</p>
+        <p class="developer">تم التطوير بواسطة : احمد السجينى</p>
+    </footer>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/201033304242" class="whatsapp-fixed" target="_blank">
+            <span>كيف يمكنني مساعدتك ؟</span><i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+    <script>
+        const MALAYAT_COLORS = [
+            { name: 'أبيض', hex: '#ffffff', border: true, emoji: '🤍' },
+            { name: 'كريمي', hex: '#fffdd0', border: false, emoji: '🤍' },
+            { name: 'بيج', hex: '#f5deb3', border: false, emoji: '🟤' },
+            { name: 'رمادي فاتح', hex: '#d3d3d3', border: false, emoji: '🩶' },
+            { name: 'رمادي غامق', hex: '#808080', border: false, emoji: '🩶' },
+            { name: 'سماوي فاتح', hex: '#b0d4f1', border: false, emoji: '💙' },
+            { name: 'أزرق هادئ', hex: '#6a9ec4', border: false, emoji: '💙' },
+            { name: 'وردي فاتح', hex: '#ffd6e0', border: false, emoji: '🩷' },
+            { name: 'وردي غامق', hex: '#e8a0b4', border: false, emoji: '🩷' },
+            { name: 'أخضر نعناعي', hex: '#b2d8d8', border: false, emoji: '💚' },
+            { name: 'بنفسجي فاتح', hex: '#e8d5f5', border: false, emoji: '💜' },
+            { name: 'ذهبي فاتح', hex: '#f5e6c8', border: false, emoji: '🟡' },
+            { name: 'تيفاني', hex: '#81d8d0', border: false, emoji: '🩵' },
+            { name: 'كحلي', hex: '#1b2a6b', border: false, emoji: '🔵' },
+        ];
+        const TYPE_NAMES = {
+            karaneesh: 'طقم ملايات سرير كبير كرانيش',
+            adi: 'طقم ملايات سرير كبير عادي',
+            jobeer: 'طقم ملايات سرير كبير چوبير',
+        };
+        const types = ['karaneesh', 'adi', 'jobeer'];
+        const HERO_SLIDES = [
+            { img: 'product-pics/malayat-kbir-1.png' },
+            { img: 'product-pics/malayat-kbir-2.png' },
+            { img: 'product-pics/malayat-kbir-3.png' },
+            { img: 'product-pics/malayat-kbir-4.png' },
+            { img: 'product-pics/malayat-kbir-5.png' },
+        ];
+
+        (function () {
+            const c = document.getElementById('heroSlides'), d = document.getElementById('heroDots');
+            HERO_SLIDES.forEach((s, i) => {
+                const sl = document.createElement('div'); sl.className = 'hero-slide';
+                sl.innerHTML = `<img src="${s.img}" alt="ملايات كبير" style="width:100%;height:100%;object-fit:contain;border-radius:16px;">`;
+                c.appendChild(sl);
+                const dot = document.createElement('div'); dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goHeroSlide(i); d.appendChild(dot);
+            });
+        })();
+        let heroIdx = 0;
+        function goHeroSlide(i) {
+            heroIdx = (i + HERO_SLIDES.length) % HERO_SLIDES.length;
+            document.getElementById('heroSlides').style.transform = `translateX(${heroIdx * 100}%)`;
+            document.querySelectorAll('.hero-dot').forEach((d, j) => d.classList.toggle('active', j === heroIdx));
+        }
+        function heroSlide(dir) { goHeroSlide(heroIdx + dir); }
+        setInterval(() => heroSlide(1), 2800);
+
+        const state = {};
+        types.forEach(t => { state[t] = { colorIdx: null, qty: 1 }; });
+
+        types.forEach(type => {
+            const grid = document.getElementById(type + '-colors-grid');
+            MALAYAT_COLORS.forEach((c, i) => {
+                const item = document.createElement('div'); item.className = 'color-item'; item.id = type + '-color-' + i;
+                item.innerHTML = `<div class="color-swatch-box" style="background:${c.hex};${c.border ? 'border-bottom:1px solid #eee;' : ''}">${c.emoji}</div><div class="color-item-name">${c.name}</div>`;
+                item.onclick = () => selectColor(type, i); grid.appendChild(item);
+            });
+        });
+
+        function selectColor(type, idx) {
+            document.querySelectorAll('#' + type + '-colors-grid .color-item').forEach(c => c.classList.remove('active'));
+            document.getElementById(type + '-color-' + idx).classList.add('active');
+            state[type].colorIdx = idx;
+            const cl = MALAYAT_COLORS[idx];
+            document.getElementById(type + '-order-summary').innerHTML =
+                `<strong>📦 المنتج:</strong> ${TYPE_NAMES[type]}<br>
+         <strong>🎁 الطقم:</strong> شرشف + غطاء لحاف + كيس مخدة + 2 خدادية<br>
+         <strong>🎨 اللون:</strong> ${cl.name}<br>
+         <strong>🔢 الكمية:</strong> <span id="${type}-qty-display">${state[type].qty}</span> طقم<br>
+         <strong>💬 السعر:</strong> سيتم التواصل لتحديد السعر`;
+            document.getElementById(type + '-order-panel').classList.add('visible');
+            setTimeout(() => {
+                document.getElementById(type + '-order-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                initStock(document.getElementById(type + '-order-panel'));
+            }, 100);
+        }
+
+        function changeQty(type, delta) {
+            state[type].qty = Math.max(1, state[type].qty + delta);
+            document.getElementById(type + '-qty').textContent = state[type].qty;
+            const d = document.getElementById(type + '-qty-display'); if (d) d.textContent = state[type].qty;
+        }
+
+        function askPrice(type) {
+            const s = state[type];
+            if (s.colorIdx === null) { alert('من فضلك اختر اللون أولاً'); return; }
+            const cl = MALAYAT_COLORS[s.colorIdx];
+            const msg = 'السلام عليكم 👋\nأنا مهتم بـ: ' + TYPE_NAMES[type] + '\n🎁 الطقم: شرشف + غطاء لحاف + كيس مخدة + 2 خدادية\n🎨 اللون: ' + cl.name + '\n🔢 الكمية: ' + s.qty + ' طقم\n\n💬 محتاج أعرف السعر من فضلك 🙏';
+            window.open('https://wa.me/201033304242?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function sendOrder(type) {
+            const s = state[type];
+            if (s.colorIdx === null) { alert('من فضلك اختر اللون أولاً'); return; }
+            const cl = MALAYAT_COLORS[s.colorIdx];
+            const msg = '🛍️ طلب جديد من موقع الياسمينا\n\n📦 المنتج: ' + TYPE_NAMES[type] + '\n🎁 الطقم: شرشف + غطاء لحاف + كيس مخدة + 2 خدادية\n🎨 اللون: ' + cl.name + '\n🔢 الكمية: ' + s.qty + ' طقم\n\nأرجو التواصل لتأكيد الطلب والسعر 🙏';
+            window.open('https://wa.me/201033304242?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function showType(id, btn) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.type-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active'); btn.classList.add('active');
+            window.scrollTo({ top: document.querySelector('.types-tabs').offsetTop - 70, behavior: 'smooth' });
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            document.querySelector('.dark-mode-btn').textContent = document.body.classList.contains('dark') ? '☀️ الوضع النهاري' : '🌙 الوضع الليلي';
+        }
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollTop').style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+    </script>
+    <script>
+        function shareWA() {
+            const text = encodeURIComponent('مفروشات الياسمينا - شوف المنتج: ' + window.location.href);
+            window.open('https://wa.me/?text=' + text, '_blank');
+        }
+        function shareFB() {
+            const url = encodeURIComponent(window.location.href);
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+        }
+        function copyLink(btn) {
+            navigator.clipboard.writeText(window.location.href).then(function () {
+                btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+                btn.classList.add('copied');
+                setTimeout(function () {
+                    btn.innerHTML = '<i class="fas fa-link"></i> نسخ الرابط';
+                    btn.classList.remove('copied');
+                }, 2500);
+            });
+        }
+        function initStock(panel) {
+            const stock = Math.floor(Math.random() * 7) + 3;
+            const pct = Math.round((stock / 10) * 100);
+            const numEl = panel.querySelector('.stock-num');
+            const barEl = panel.querySelector('.stock-bar');
+            if (numEl) numEl.textContent = stock;
+            if (barEl) setTimeout(function () { barEl.style.width = pct + '%'; }, 300);
+        }
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollTop').style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
